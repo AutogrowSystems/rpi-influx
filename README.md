@@ -6,4 +6,4 @@ An Influx container for ARM
 
 To ensure you have permissions for the files in the data volume, pass your user ID into the `LOCAL_USER_ID` envvar:
 
-    docker run --rm -it -e LOCAL_USER_ID=1000 -p "8086:8086" -v influxdb:/var/lib/influxdb autogrow/rpi-influx
+    docker run --rm -it -e LOCAL_USER_ID=`id -u $USER` -p "8086:8086" -v influxdb:/var/lib/influxdb autogrow/rpi-influx
